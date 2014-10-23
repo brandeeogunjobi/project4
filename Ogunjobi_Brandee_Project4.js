@@ -2,7 +2,7 @@
 
 //-----------String Library-----------//
 
-//Does a string follow a 123-456-7890 pattern like a phone number?
+//(1) Does a string follow a 123-456-7890 pattern like a phone number?
 
 	     var phoneValidate = function(phone) {
  var phonesec = phone.split('-'); // ['123', '456', '7890']
@@ -18,7 +18,7 @@
 };
 
 
-//Does a string follow an aaa@bbb.ccc pattern like an email address?
+//(2) Does a string follow an aaa@bbb.ccc pattern like an email address?
 
 var emailValidate = function(email) {
  var emailsec = email.split('@'); 
@@ -40,14 +40,8 @@ var emailValidate = function(email) {
  return false
 };
 
-console.log(emailValidate('superlinkx@gmail.com'));
-console.log(emailValidate('@gmail.com'));
-console.log(emailValidate('hello@gmail'));
-console.log(emailValidate('hello.gmail.com'));
-console.log(emailValidate('hello@www.gmail.com'));
-
 	
-//Title-case a string (split into words, then uppercase the first letter of each word.
+//(3) Title-case a string (split into words, then uppercase the first letter of each word.
 
 var name = "brandee ogunjobi";
 
@@ -60,16 +54,10 @@ var wordUpper = function(string) {
 	return words.join(' ');
 };
 
-console.log(wordUpper('brandee ogunjobi'));
-console.log(wordUpper('Brandee ogunjobi'));
-console.log(wordUpper('brandeeogunjobi'));
-console.log(wordUpper('@brandee .ogunjobi'));
-
-
 
 //-----------Number Library-----------//
     
-//Find the number of hours or days difference between two dates.
+//(4) Find the number of hours or days difference between two dates.
 
 var dateDiff = function(date1, date2, flag) {
  date1 = new Date(date1);
@@ -89,14 +77,12 @@ if(date1 > date2)
  return "Please pass 'days' or 'hours'";
 };
 
-console.log(dateDiff('1/1/10', '2/28/18', 'days'));
-console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
+
     
     
 //-----------Array Library-----------//
     
 //Find the smallest value in an array that is greater than a given number
-
 
 var nextGreatest = function(array, number) {
  var i;
@@ -115,16 +101,56 @@ var nextGreatest = function(array, number) {
 };
 
 
+
+
+//Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
+var addArr = function(array) {
+ var i;
+ var total = 0;
+ for(i = 0; i < array.length; i++) { // [0, '5', 6, 'hello', {"something": 'something'}, 8, 7.53]
+ 	if(typeof array[i] === "number")
+ 	total += array[i];
+ }
+
+ return total;
+};
+
+
+//-----------String Library Tests-----------//
+
+//-----------Email Tests-----------//
+console.log(emailValidate('superlinkx@gmail.com'));
+console.log(emailValidate('@gmail.com'));
+console.log(emailValidate('hello@gmail'));
+console.log(emailValidate('hello.gmail.com'));
+console.log(emailValidate('hello@www.gmail.com'));
+//-----------Uppercase Test-----------//
+console.log(wordUpper('brandee ogunjobi'));
+console.log(wordUpper('Brandee ogunjobi'));
+console.log(wordUpper('brandeeogunjobi'));
+console.log(wordUpper('@brandee .ogunjobi'));
+
+//-----------Number Library Test-----------//
+
+//-----------Date Difference Test-----------//
+console.log(dateDiff('1/1/10', '2/28/18', 'days'));
+console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
+
+//-----------Array Library Tests-----------//
+
+//-----------Smallest Value Test-----------//
 console.log(nextGreatest([6, 2, 78, 42], 8)); // 42
 console.log(nextGreatest([6, 2, 78, 42], 79)); // false
 
+//-----------Number Value Test-----------//
+console.log(addArr([0, '5', 6, 'hello', {"something": 'something'}, 8, 7.53])); //21.53
 
 
-    
-  
-//Find the total value of just the numbers in an array, even if some of the items are not numbers.
 
-    
-    /*Given an array of objects and the name of a key, return the array sorted by the      value of that key in each of the objects: "a"
-      + [{a:2},{a:3},{a:1}] ? [{a:1},{a:2},{a:3}].*/
+
+
+
+
+
  
