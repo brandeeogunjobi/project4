@@ -64,18 +64,26 @@ console.log(wordUpper('@brandee .ogunjobi'));
 
 
 
-    
-    /*Given a string that is a list of things separated by a given string, as well as 									      another string separator,
-      return a string with the first separator changed to the second: "a,b,c" + "," +      "/"    ? "a/b/c".*/
-
 //-----------Number Library-----------//
-    //Format a number to use a specific number of decimal places, as for money: 2.1 ? 	      2.10
     
-    //Fuzzy-match a number: is the number above or below a number within a certain      percent?
+//Find the number of hours or days difference between two dates.
+if(date1 > date2)
+ 	diff = date1 - date2;
+ else
+ 	diff = date2 - date1;
+
+ if(flag === 'hours')
+ 	return diff/(1000*60*60);
+
+ if(flag === 'days')
+ 	return diff/(1000*60*60*24);
+
+ return "Please pass 'days' or 'hours'";
+};
+
+console.log(dateDiff('1/1/10', '2/28/18', 'days'));
+console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
     
-    //Find the number of hours or days difference between two dates.
-    
-    //Given a string version of a number such as "42", return the value as an actual      Number, such as 42.
     
 //-----------Array Library-----------//
     //Find the smallest value in an array that is greater than a given number
