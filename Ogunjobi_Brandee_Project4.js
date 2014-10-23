@@ -3,6 +3,7 @@
 //-----------String Library-----------//
 
 //Does a string follow a 123-456-7890 pattern like a phone number?
+
 	     var phoneValidate = function(phone) {
  var phonesec = phone.split('-'); // ['123', '456', '7890']
  if(phonesec.length === 3) {
@@ -18,6 +19,7 @@
 
 
 //Does a string follow an aaa@bbb.ccc pattern like an email address?
+
 var emailValidate = function(email) {
  var emailsec = email.split('@'); 
  if(emailsec.length === 2) { //Check that there is a single @ symbol with strings on each side
@@ -46,6 +48,7 @@ console.log(emailValidate('hello@www.gmail.com'));
 
 	
 //Title-case a string (split into words, then uppercase the first letter of each word.
+
 var name = "brandee ogunjobi";
 
 var wordUpper = function(string) {
@@ -67,6 +70,7 @@ console.log(wordUpper('@brandee .ogunjobi'));
 //-----------Number Library-----------//
     
 //Find the number of hours or days difference between two dates.
+
 var dateDiff = function(date1, date2, flag) {
  date1 = new Date(date1);
  date2 = new Date(date2);
@@ -92,6 +96,28 @@ console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
 //-----------Array Library-----------//
     
 //Find the smallest value in an array that is greater than a given number
+
+
+var nextGreatest = function(array, number) {
+ var i;
+ var sortNumber = function(a,b) {
+ 	return a - b;
+ };
+
+ array.sort(sortNumber);
+
+ for(i = 0; i < array.length; i++) {
+ 	if(array[i] > number)
+ 	return array[i];
+ }
+
+ return false;
+};
+
+
+console.log(nextGreatest([6, 2, 78, 42], 8)); // 42
+console.log(nextGreatest([6, 2, 78, 42], 79)); // false
+
 
 
     
