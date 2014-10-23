@@ -2,7 +2,7 @@
 
 //-----------String Library-----------//
 
-	//Does a string follow a 123-456-7890 pattern like a phone number?
+//Does a string follow a 123-456-7890 pattern like a phone number?
 	     var phoneValidate = function(phone) {
  var phonesec = phone.split('-'); // ['123', '456', '7890']
  if(phonesec.length === 3) {
@@ -16,6 +16,8 @@
  return false;
 };
 
+
+//Does a string follow an aaa@bbb.ccc pattern like an email address?
 var emailValidate = function(email) {
  var emailsec = email.split('@'); // ['somename', 'domain.tld']
  if(emailsec.length === 2) { //Check that there is a single @ symbol with strings on each side
@@ -42,14 +44,26 @@ console.log(emailValidate('hello@gmail'));
 console.log(emailValidate('hello.gmail.com'));
 console.log(emailValidate('hello@www.gmail.com'));
 
+	
+//Title-case a string (split into words, then uppercase the first letter of each word.
+var name = "brandee ogunjobi";
 
-	//Does a string follow an aaa@bbb.ccc pattern like an email address?
-	
-	
-    
-    //Is the string a URL? (Does it start with http: or https:?)
-    
-    //Title-case a string (split into words, then uppercase the first letter of each 			      word)
+var wordUpper = function(string) {
+	var i;
+	var words = string.split(' ');
+	for(i = 0; i < words.length; i++) {
+	words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(i);
+	}
+	return words.join(' ');
+};
+
+console.log(wordUpper('brandee ogunjobi'));
+console.log(wordUpper('Brandee ogunjobi'));
+console.log(wordUpper('brandeeogunjobi'));
+console.log(wordUpper('@brandee .ogunjobi'));
+
+
+
     
     /*Given a string that is a list of things separated by a given string, as well as 									      another string separator,
       return a string with the first separator changed to the second: "a,b,c" + "," +      "/"    ? "a/b/c".*/
