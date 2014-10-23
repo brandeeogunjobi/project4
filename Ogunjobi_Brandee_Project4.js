@@ -67,6 +67,10 @@ console.log(wordUpper('@brandee .ogunjobi'));
 //-----------Number Library-----------//
     
 //Find the number of hours or days difference between two dates.
+var dateDiff = function(date1, date2, flag) {
+ date1 = new Date(date1);
+ date2 = new Date(date2);
+ 
 if(date1 > date2)
  	diff = date1 - date2;
  else
@@ -88,25 +92,12 @@ console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
 //-----------Array Library-----------//
     
 //Find the smallest value in an array that is greater than a given number
- if(date1 > date2)
- 	diff = date1 - date2;
- else
- 	diff = date2 - date1;
 
- if(flag === 'hours')
- 	return diff/(1000*60*60);
 
- if(flag === 'days')
- 	return diff/(1000*60*60*24);
-
- return "Please pass 'days' or 'hours'";
-};
-
-console.log(dateDiff('1/1/10', '2/28/18', 'days'));
-console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
     
   
-    //Find the total value of just the numbers in an array, even if some of the items 	      are not numbers.
+//Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
     
     /*Given an array of objects and the name of a key, return the array sorted by the      value of that key in each of the objects: "a"
       + [{a:2},{a:3},{a:1}] ? [{a:1},{a:2},{a:3}].*/
