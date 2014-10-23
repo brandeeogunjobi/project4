@@ -19,7 +19,7 @@
 
 //Does a string follow an aaa@bbb.ccc pattern like an email address?
 var emailValidate = function(email) {
- var emailsec = email.split('@'); // ['somename', 'domain.tld']
+ var emailsec = email.split('@'); 
  if(emailsec.length === 2) { //Check that there is a single @ symbol with strings on each side
   if(emailsec[0].length > 0) { //Check that the username side is at least 1 character in length
   domainsec = emailsec[1].split('.'); //Split the domain on .
@@ -86,8 +86,24 @@ console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
     
     
 //-----------Array Library-----------//
-    //Find the smallest value in an array that is greater than a given number
+    
+//Find the smallest value in an array that is greater than a given number
+ if(date1 > date2)
+ 	diff = date1 - date2;
+ else
+ 	diff = date2 - date1;
 
+ if(flag === 'hours')
+ 	return diff/(1000*60*60);
+
+ if(flag === 'days')
+ 	return diff/(1000*60*60*24);
+
+ return "Please pass 'days' or 'hours'";
+};
+
+console.log(dateDiff('1/1/10', '2/28/18', 'days'));
+console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
     
   
     //Find the total value of just the numbers in an array, even if some of the items 	      are not numbers.
