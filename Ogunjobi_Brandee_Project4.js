@@ -117,9 +117,8 @@ var addArr = function(array) {
 };
 
 
-//-----------String Library Tests-----------//
-
-//-----------Email Tests-----------//
+//-----------String---------------//
+//-----------Email Test-----------//
 console.log(emailValidate('superlinkx@gmail.com'));
 console.log(emailValidate('@gmail.com'));
 console.log(emailValidate('hello@gmail'));
@@ -131,14 +130,12 @@ console.log(wordUpper('Brandee ogunjobi'));
 console.log(wordUpper('brandeeogunjobi'));
 console.log(wordUpper('@brandee .ogunjobi'));
 
-//-----------Number Library Test-----------//
-
+//-----------Number-------------------------//
 //-----------Date Difference Test-----------//
 console.log(dateDiff('1/1/10', '2/28/18', 'days'));
 console.log(dateDiff('1/20/01', '1/21/01', 'hours'));
 
-//-----------Array Library Tests-----------//
-
+//-----------Array-------------------------//
 //-----------Smallest Value Test-----------//
 console.log(nextGreatest([6, 2, 78, 42], 8)); // 42
 console.log(nextGreatest([6, 2, 78, 42], 79)); // false
